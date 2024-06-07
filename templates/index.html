@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Load Report</title>
+        <style>
+        body {
+            background-image: url('/static/university.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Load Report</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Hours Worked</th>
+                <th>Report Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for load in loads %}
+            <tr>
+                <td>{{ load.teacher_name }}</td>
+                <td>{{ load.subject }}</td>
+                <td>{{ load.hours_worked }}</td>
+                <td>{{ load.report_period }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
